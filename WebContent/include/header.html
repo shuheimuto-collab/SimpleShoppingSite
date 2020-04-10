@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SimpleShoppingSite</title>
+<!-- Reset CSSの読み込み -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="../js/shopping.js"></script>
+<style>
+/*共通部分*/
+* {
+	font-weight: bold;
+	font-size: 1.2rem;
+	font-family: sans-serif;
+}
+
+img {
+	max-width: 100%;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+body {
+	line-height: 1.6;
+	color: black;
+	background: radial-gradient(#a7fbf6, #555555);
+	background-size: cover;
+	margin-left: auto;
+	margin-right: auto;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+h2 {
+	font-size: 2.0rem;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+/****************メニューヘッダー*****************/
+.menu_header {
+	display: flex;
+	justify-content: space-between;
+	font-size: 1.25rem;
+	background: radial-gradient(#a7fbf6, #555555);
+	margin-right: 20px;
+	margin-left: 20px;
+}
+
+.menu {
+	display: flex;
+}
+
+.menu_div {
+	margin-right: 20px;
+}
+/**************ログイン画面/ログアウト画面******************/
+.login-in {
+	margin-top: 200px;
+	margin-right: 500px;
+	margin-left: 500px;
+	text-align: center;
+	min-height: 60vh;
+}
+
+.login-in_title {
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+.login-in_form {
+	font-weight: bold;
+}
+
+.login-in input {
+	font-size: 1.1rem
+}
+
+.logout {
+	margin-top: 300px;
+	margin-right: 500px;
+	margin-left: 500px;
+	text-align: center;
+	min-height: 60vh;
+}
+
+/*使わない*/
+.logout_button  div {
+	background: black;
+	display: flex;
+}
+/*商品一覧画面(お客様用)*/
+.product {
+	display: none;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.product_search {
+	font-weight: bold;
+	font-size: 1.25rem;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.product_list {
+	font-weight: bold;
+	text-align: center;
+	margin-left: 150px;
+}
+
+.product_search input {
+	font-weight: bold;
+	font-size: 1.1rem;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	margin-top: 3%;
+	text-align: center;
+}
+
+.item {
+	width: 60%;
+}
+
+.item>div {
+	margin-bottom: 10px;
+}
+
+.item_button {
+	display: flex;
+	justify-content: space-between;
+}
+
+.image {
+	box-shadow: 6px 6px 8px gray;
+}
+
+/*CSS用コピペ*/
+#glayLayer {
+	display: none;
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background: black;
+	filter: alpha(opacity = 60);
+	opacity: 0.60;
+}
+/*CSS用コピペ*/
+#overLayer {
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-top: -244px;
+	margin-left: -325px;
+}
+/*CSS用コピペ*/
+#glayLayer1 {
+	display: none;
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background: #7BAEB5;
+	filter: alpha(opacity = 75);
+	opacity: 0.75;
+}
+
+#overLayer1 {
+	display: none;
+	width: 400px;
+	background: white;
+	padding: 10px;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+}
+/*cart.jsp*/
+.cart {
+	text-align: center;
+}
+
+.cart_title {
+
+}
+
+.cart_contents {
+	border: solid 3px #000000;
+	margin-top: 3%;
+}
+
+/*********コンポーネント*************/
+/*ボタン自動作成*/
+.button {
+	border-radius: 30%; /* 角丸       */
+	font-size: 15pt; /* 文字サイズ */
+	text-align: center; /* 文字位置   */
+	cursor: pointer; /* カーソル   */
+	padding: 2px 2px; /* 余白       */
+	background: rgba(102, 102, 255, 0.57); /* 背景色     */
+	color: #ffffff; /* 文字色     */
+	line-height: 1em; /* 1行の高さ  */
+	transition: .3s; /* なめらか変化 */
+	box-shadow: 7px 7px 8px #666666; /* 影の設定 */
+	border: 2px solid rgba(102, 102, 255, 0.57); /* 枠の指定 */
+}
+
+.detail_button {
+	border-radius: 30%; /* 角丸       */
+	border: 1px solid black; /* 枠の指定 */
+	font-size: 15pt; /* 文字サイズ */
+	background: rgba(102, 102, 255, 0.57); /* 背景色     */
+	color: white; /* 文字色     */
+	text-align: center; /* 文字位置   */
+}
+
+/*********増減ボタン*************/
+</style>
+</head>
+<body>

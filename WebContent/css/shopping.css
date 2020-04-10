@@ -1,0 +1,13 @@
+@charset "UTF-8";
+.main-nav {
+	display: flex;
+}
+
+#home {
+	background-image: linear-gradient(#c9ffbf, #ffafbd);
+	min-height: 100vh;
+}
+
+.login{
+	text-align:center;
+}
